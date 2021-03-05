@@ -1,5 +1,5 @@
 <div align="center">
-  <img width="250" alt="naven logo" src="naven.svg"/>
+  <img width="250" alt="naven logo" src="brand.svg"/>
 </div>
 
 <h3 align="center"> Preset for calamares. </h3>
