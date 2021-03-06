@@ -46,11 +46,10 @@ QPushButton { background-color: green; }
  * delegate code.
  */
 
-/*
-#mainApp { }
-#sidebarApp { }
-#logoApp { }
-*/
+* {
+  color: #ffffff;
+  background: #0d1117;
+}
 
 /*** Welcome module.
  *
@@ -94,3 +93,18 @@ QPushButton#aboutButton { qproperty-icon: url(:/data/images/release.svg); }
 #licenseItem {  }
 #licenseItemFullText {  }
 */
+
+/*
+ * Buttons
+ */
+#view-button-back {
+  background: #5677fc;
+}
+
+#view-button-next {
+  background: #23d18c;
+}
+
+#view-button-cancel {
+  background: #424b54;
+}
