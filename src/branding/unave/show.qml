@@ -1,76 +1,43 @@
-/* === This file is part of Calamares - <https://calamares.io> ===
+/* === This file is part of Calamares Extensions - <http://github.com/calamares-extensions> ===
  *
- *   SPDX-FileCopyrightText: 2015 Teo Mrnjavac <teo@kde.org>
- *   SPDX-FileCopyrightText: 2018 Adriaan de Groot <groot@kde.org>
- *   SPDX-License-Identifier: GPL-3.0-or-later
- *
- *   Calamares is Free Software: see the License-Identifier above.
- *
+ * SPDX-FileCopyrightText: 2021 Adriaan de Groot <groot@kde.org>
+ * SPDX-License-Identifier: BSD-2-Clause
  */
 
-import QtQuick 2.0;
-import calamares.slideshow 1.0;
+import QtQuick 2.0
+import calamares.slideshow 1.0
+import io.calamares.ui 1.0
 
 Presentation
 {
     id: presentation
 
-    function nextSlide() {
-        console.log("QML Component (default slideshow) Next slide");
-        presentation.goToNextSlide();
-    }
-
     Timer {
-        id: advanceTimer
         interval: 4000
         running: presentation.activatedInCalamares
         repeat: true
-        onTriggered: nextSlide()
+        onTriggered: presentation.goToNextSlide()
     }
 
-    Slide {
-        Image {
-            id: slide01
-            source: "assets/slide_01.png"
-            width: parent.width; height: parent.height
-            fillMode: Image.PreserveAspectFit
-            anchors.centerIn: parent
-        }
+    function onActivate() { }
+    function onLeave() { }
+
+    Rectangle {
+        id: background
+        anchors.fill: parent
+        color: Branding.styleString(Branding.SidebarBackground)
+        z: -1
     }
 
-    Slide {
-        Image {
-            id: slide02
-            source: "assets/slide_02.png"
-            width: parent.width; height: parent.height
-            fillMode: Image.PreserveAspectFit
-            anchors.centerIn: parent
-        }
+    ImageSlide {
+        src: "assets/slide_01.svg"
     }
 
-    Slide {
-        Image {
-            id: slide03
-            source: "assets/slide_03.png"
-            width: parent.width; height: parent.height
-            fillMode: Image.PreserveAspectFit
-            anchors.centerIn: parent
-        }
+    ImageSlide {
+        src: "assets/slide_02.svg"
     }
 
-    // When this slideshow is loaded as a V1 slideshow, only
-    // activatedInCalamares is set, which starts the timer (see above).
-    //
-    // In V2, also the onActivate() and onLeave() methods are called.
-    // These example functions log a message (and re-start the slides
-    // from the first).
-    function onActivate() {
-        console.log("QML Component (default slideshow) activated");
-        presentation.currentSlide = 0;
+    ImageSlide {
+        src: "assets/slide_03.svg"
     }
-
-    function onLeave() {
-        console.log("QML Component (default slideshow) deactivated");
-    }
-
 }
