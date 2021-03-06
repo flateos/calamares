@@ -22,41 +22,40 @@ Presentation
 
     Timer {
         id: advanceTimer
-        interval: 1000
+        interval: 4000
         running: presentation.activatedInCalamares
         repeat: true
         onTriggered: nextSlide()
     }
 
     Slide {
-
         Image {
-            id: background
-            source: "squid.png"
-            width: 200; height: 200
+            id: slide01
+            source: "assets/slide_01.png"
+            width: parent.width; height: parent.height
             fillMode: Image.PreserveAspectFit
             anchors.centerIn: parent
         }
-        Text {
-            anchors.horizontalCenter: background.horizontalCenter
-            anchors.top: background.bottom
-            text: "This is a customizable QML slideshow.<br/>"+
-                  "Distributions should provide their own slideshow and list it in <br/>"+
-                  "their custom branding.desc file.<br/>"+
-                  "To create a Calamares presentation in QML, import calamares.slideshow,<br/>"+
-                  "define a Presentation element with as many Slide elements as needed."
-            wrapMode: Text.WordWrap
-            width: presentation.width
-            horizontalAlignment: Text.Center
+    }
+
+    Slide {
+        Image {
+            id: slide02
+            source: "assets/slide_02.png"
+            width: parent.width; height: parent.height
+            fillMode: Image.PreserveAspectFit
+            anchors.centerIn: parent
         }
     }
 
     Slide {
-        centeredText: qsTr("This is a second Slide element.")
-    }
-
-    Slide {
-        centeredText: qsTr("This is a third Slide element.")
+        Image {
+            id: slide03
+            source: "assets/slide_03.png"
+            width: parent.width; height: parent.height
+            fillMode: Image.PreserveAspectFit
+            anchors.centerIn: parent
+        }
     }
 
     // When this slideshow is loaded as a V1 slideshow, only
