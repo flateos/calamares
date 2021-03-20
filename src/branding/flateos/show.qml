@@ -13,7 +13,7 @@ Presentation
     id: presentation
 
     Timer {
-        interval: 4000
+        interval: 5000
         running: presentation.activatedInCalamares
         repeat: true
         onTriggered: presentation.goToNextSlide()
@@ -30,6 +30,10 @@ Presentation
     }
 
     ImageSlide {
+        src: "assets/banner.svg"
+    }
+
+    ImageSlide {
         src: "assets/slide_01.svg"
     }
 
@@ -39,5 +43,9 @@ Presentation
 
     ImageSlide {
         src: "assets/slide_03.svg"
+    }
+
+    ImageSlide {
+        src: "assets/slide_04.svg"
     }
 }
