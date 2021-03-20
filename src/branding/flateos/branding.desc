@@ -181,7 +181,7 @@ style:
    sidebarBackground:    "#0d1117"
    sidebarText:          "#FFFFFF"
    sidebarTextSelect:    "#0d1117"
-   sidebarTextHighlight: "#23d18c"
+   sidebarTextHighlight: "#00cecb"
 
 ### SLIDESHOW
 #
