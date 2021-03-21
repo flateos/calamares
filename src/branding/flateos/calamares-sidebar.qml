@@ -36,12 +36,12 @@ Rectangle {
 
         Repeater {
             model: ViewManager
+
             Rectangle {
                 Layout.leftMargin: 6;
                 Layout.rightMargin: 6;
                 Layout.fillWidth: true;
                 height: 40;
-                radius: 2;
                 color: Branding.styleString( index == ViewManager.currentStepIndex ? Branding.SidebarBackgroundSelected : Branding.SidebarBackground );
 
                 Text {

@@ -17,6 +17,7 @@ Rectangle {
     color: Branding.styleString( Branding.SidebarBackground );
     height: 60;
 
+
     RowLayout {
         id: buttonBar
         anchors.fill: parent;
@@ -28,31 +29,42 @@ Rectangle {
         Button {
             text: ViewManager.backLabel;
             icon.name: ViewManager.backIcon;
-
             enabled: ViewManager.backEnabled;
             visible: ViewManager.backAndNextVisible;
             onClicked: { ViewManager.back(); }
+            palette {
+                button: "white"
+                buttonText: "#0d1117"
+            }
+
         }
 
         Button {
             text: ViewManager.nextLabel;
             icon.name: ViewManager.nextIcon;
-
             enabled: ViewManager.nextEnabled;
             visible: ViewManager.backAndNextVisible;
             onClicked: { ViewManager.next(); }
             Layout.rightMargin: 3 * buttonBar.spacing;
+            palette {
+                button: "#23d18c"
+                buttonText: "#ffffff"
+            }
         }
 
         Button {
             Layout.rightMargin: 2 * buttonBar.spacing
             text: ViewManager.quitLabel;
             icon.name: ViewManager.quitIcon;
-
             ToolTip.visible: hovered
             ToolTip.timeout: 5000
             ToolTip.delay: 1000
             ToolTip.text: ViewManager.quitTooltip;
+            palette {
+                button: "#424b54"
+                buttonText: "#ffffff"
+            }
+
 
             /*
              * The ViewManager has settings -- user-controlled via the
